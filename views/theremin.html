@@ -1,0 +1,25 @@
+<div>
+	Main Frequency <input type="text" ng-change="rebuildOvertoneSeries()" ng-model="data.fundamentalFrequency">
+	Harmony Fade Rate <input type="text" ng-change="rebuildOvertoneSeries()" ng-model="data.decreaseVolumeRate">
+	Harmonics <input type="text" ng-change="rebuildOvertoneSeries()" ng-model="data.overtones">
+</div>
+<div>
+	<div ng-repeat="overtone in data.oscillators">
+		<div style="background-color:blue; color:white; padding-left:5px; width:{{300 * overtone.gain.gain.value + 130}}px;">
+			{{overtone.name}}: {{overtone.gain.gain.value | number:2}} >
+			<!--<input type="text" ng-model="overtone.gain.gain.value">-->
+		</div>
+	</div>
+	<button ng-click="evenVolume()">Even Volume</button>
+	<button ng-click="randomizeVolume()">Remix Volume</button>
+</div>
+<div>
+	<button ng-Click="changeWaveType('sine')">sine</button>
+	<button ng-Click="changeWaveType('square')">square</button>
+	<button ng-Click="changeWaveType('triangle')">triangle</button>
+	<button ng-Click="changeWaveType('sawtooth')">sawtooth</button>
+</div>
+<div>
+	<button ng-Click="togglePlay()">Play / Pause</button>
+</div>
+
