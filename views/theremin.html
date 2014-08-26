@@ -5,7 +5,7 @@
 </div>
 <div>
 	<div ng-repeat="overtone in data.oscillators">
-		<div style="background-color:blue; color:white; padding-left:5px; width:{{300 * overtone.gain.gain.value + 130}}px;">
+		<div style="background-color:SteelBlue; color:white; padding-left:5px; width:{{300 * overtone.gain.gain.value + 130}}px;">
 			{{overtone.name}}: {{overtone.gain.gain.value | number:2}} >
 			<!--<input type="text" ng-model="overtone.gain.gain.value">-->
 		</div>
